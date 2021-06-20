@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  application:
+    name: user-resource
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+server:
+  port: 8080
