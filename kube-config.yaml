@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: movie-resource-deployment
+  name: user-resource-deployment
   labels:
-    app: movie-resource
+    app: user-resource
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: movie-resource
+      app: user-resource
   template:
     metadata:
       labels:
-        app: movie-resource
+        app: user-resource
     spec:
       containers:
-      - name: movie-resource
-        image: docker.io/skullgnammer/movie-resource:latest
+      - name: user-resource
+        image: docker.io/skullgnammer/user-resource:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -28,10 +28,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: movie-resource-service
+  name: user-resource-service
 spec:
   selector:
-    app: movie-resource
+    app: user-resource
   type: LoadBalancer
   ports:
     - protocol: TCP
